@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | Caminho do Conhecimento SLC</title>
+  </head>
+  <body style="text-align: center">
+    <canvas id="unity-canvas" width=720 height=1280 style="width: 720px; height: 1280px; background: #231F20"></canvas>
+    <script src="Build/HTML_QUIZ.loader.js"></script>
+    <script>
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        // Mobile device style: fill the whole browser client area with the game canvas:
+        var meta = document.createElement('meta');
+        meta.name = 'viewport';
+        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+        document.getElementsByTagName('head')[0].appendChild(meta);
+      }
+
+      createUnityInstance(document.querySelector("#unity-canvas"), {
+        dataUrl: "Build/ed3b2cf204f8e8d835747ec929c5a24e.data",
+        frameworkUrl: "Build/3fc13d2c17640d8bcfec40d1cf6db6d6.js",
+        codeUrl: "Build/94abeb0ce40ae9c5763a6f0de62be021.wasm",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "SLC Máquinas",
+        productName: "Caminho do Conhecimento SLC",
+        productVersion: "1.0.2",
+        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+      });
+    </script>
+  </body>
+</html>
